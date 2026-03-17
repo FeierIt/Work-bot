@@ -11,6 +11,9 @@ from aiogram.fsm.context import FSMContext
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 
 TOKEN = os.getenv('BOT_TOKEN')
+GROUP_ID = os.getenv('GROUP_ID')
+ADMIN_ID = os.getenv('ADMIN_ID')
+ADMIN_CONTACT = os.getenv('ADMIN_CONTACT')
 bot = Bot(token=TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
 
