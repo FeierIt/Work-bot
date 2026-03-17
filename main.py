@@ -11,7 +11,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 
 TOKEN = os.getenv('BOT_TOKEN')
-GROUP_ID = os.getenv('GROUP_ID')
+PUBLISH_CHAT_ID = os.getenv('PUBLISH_CHAT_ID')
 ADMIN_ID = os.getenv('ADMIN_ID')
 ADMIN_CONTACT = os.getenv('ADMIN_CONTACT')
 bot = Bot(token=TOKEN)
@@ -301,13 +301,13 @@ async def process_vacancy(message: types.Message, state: FSMContext):
     ])
     try:
         await bot.send_message(
-            GROUP_ID,
+            PUBLISH_CHAT_ID,
             vacancy_text,
             parse_mode="Markdown",
             reply_markup=profile_kb,
         )
         await message.answer(
-            "✅ Вакансия успешно опубликована в группе!",
+            "✅ Вакансия успешно опубликована в канале!",
             reply_markup=get_main_menu()
         )
     except Exception as e:
